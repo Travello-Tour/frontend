@@ -1,0 +1,23 @@
+:root {
+  color-scheme: light;
+  --maxContainer: 1200px;
+}
+
+body {
+  background: var(--c-bg-1);
+  // color: var(--c-text-primary);
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  --full: minmax(1rem, 1fr);
+  --container: minmax(0, var(--maxContainer));
+  max-width: var(--maxContainer);
+  margin: 0 auto;
+}
+
+body {
+  background: var(--c-bg-1);
+  // color: var(--c-text-primary);
+  font-family: 'Manrope', sans-serif;
+}

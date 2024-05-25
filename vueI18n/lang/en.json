@@ -1,0 +1,23 @@
+{
+	"pageMeta": {
+		"home": "Home",
+		"about": "About",
+		"contact": "Contact"
+	},
+	"header": {
+		"home": "Home",
+		"directions": "Directions",
+		"hotels": "Hotels",
+		"flights": "Flights",
+		"bookings": "Bookings",
+		"login": "Login",
+		"signUp": "Sign Up"
+	},
+	"validation": {
+    "required": "Required",
+    "min": "Minimum characters ",
+    "email": "Incorrect mail format",
+    "sameAs": "Password mismatch",
+    "invalid": "The field has an invalid value"
+  }
+}
