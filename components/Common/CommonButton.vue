@@ -1,15 +1,13 @@
 <template>
   <NuxtLink
     class='button'
-    :to='`${lang}to`'
+    :to='to'
   >
-    {{ $t(`header.${text}`) }}
+    {{ text }}
   </NuxtLink>
 </template>
 
 <script lang="ts" setup>
-const { locale } = useI18n()
-const lang = computed(() => locale.value === 'ru' ? '' : `/${locale.value}`)
 
 interface Props {
   text?: string

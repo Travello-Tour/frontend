@@ -1,4 +1,4 @@
-interface Destinations {
+interface Destination {
   id: number
   name: string
   name_where_to: string

@@ -74,6 +74,7 @@ export default defineNuxtConfig({
           include: [
             'PanelMenu',
             'Button',
+            'Paginator',
             'Listbox',
             'Dialog',
             'Dropdown',

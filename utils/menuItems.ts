@@ -2,22 +2,18 @@
 export const menuHeader = [
   {
     to: '/',
-    text: 'home',
+    text: 'Главная',
   },
   {
-    to: '/directions',
-    text: "directions",
+    to: '/destination',
+    text: "Направления",
   },
   {
-    to: '/hotels',
-    text: "hotels",
+    to: '/thematic',
+    text: "Тематические туры",
   },
   {
-    to: '/flights',
-    text: "flights",
+    to: '/tours',
+    text: "Туры",
   },
-  {
-    to: '/bookings',
-    text: "bookings",
-  }
 ]
