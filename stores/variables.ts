@@ -21,7 +21,6 @@ export const useVariables = defineStore(
       if (res) {
         pagination.value = res.pagination
         variables.value = res.results
-        console.log(pagination.value);
       }
       if (error.value) {
         errors.value = error.value

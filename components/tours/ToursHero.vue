@@ -21,6 +21,7 @@
     v-model:first='count'
     :rows="1"
     :totalRecords="pagination.total_pages"
+    template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
   ></PrimePaginator>
 </template>
 
@@ -30,8 +31,8 @@ const variablesList = computed(() => variablesStore.variables)
 const count = ref(0)
 const pagination = computed(() => variablesStore.pagination)
 
-watch(count, async () => {
-  await switchPage(count.value + 1)
+watch(count, () => {
+  switchPage(count.value + 1)
 })
 const switchPage = async (page:number) => {
   await variablesStore.getVariables(apiVariables, page, 4)
@@ -69,7 +70,7 @@ useAsyncData('variables', () => variablesStore.getVariables(apiVariables, count.
   }
 
   &__card {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 24px;
     height: 100%;
     flex-grow: 1;

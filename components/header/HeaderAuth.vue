@@ -6,7 +6,7 @@
       :fontWeight='"700"'
     />
     <CommonButton
-      :to='"/auth"'
+      :to='"/registration"'
       :text='"Регистрация"'
       :border='"1px solid var(--c-text-1)"'
       :borderRadius='"5px"'
