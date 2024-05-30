@@ -27,7 +27,7 @@
 const swiper = useSwiper()
 </script>
 
-<style>
+<style scoped lang="scss">
 .swiper-button {
   background: none;
   border: none;

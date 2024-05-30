@@ -25,6 +25,7 @@ export function useValidation( fields: string[], num: number = 6 ) {
     passwordConfirm: string().min(num).required(t('validation.required')).oneOf([yupRef('password')], t('validation.sameAs')),
     phone_number: string().required(t('validation.required')),
     site_url: string().required(t('validation.required')),
+    username: string().required(t('validation.required')),
   }
 
   fields.forEach(field => {

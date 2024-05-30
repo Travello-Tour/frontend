@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   devServer: {
     host: '0.0.0.0',
-    port: 3002,
+    port: 5431,
   },
 
   css: [
@@ -79,6 +79,7 @@ export default defineNuxtConfig({
             'Dialog',
             'Dropdown',
             'SelectButton',
+            "Slider"
           ],
         },
         directives: {
@@ -91,7 +92,7 @@ export default defineNuxtConfig({
   // ssr: false,
   runtimeConfig: {
     public: {
-      baseURL: 'http://localhost:8080/',
+      baseURL: process.env.NUXT_PUBLIC_BASE_URL || 'https://travello-tour-backend-7b2f.twc1.net/',
     },
   },
 })

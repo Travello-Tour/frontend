@@ -1,12 +1,12 @@
 <template>
   <div class='wrapper__auth'>
     <CommonButton
-      :to='"/login"'
+      :to='"/auth/login"'
       :text='"Войти"'
       :fontWeight='"700"'
     />
     <CommonButton
-      :to='"/registration"'
+      :to='"/auth/registration"'
       :text='"Регистрация"'
       :border='"1px solid var(--c-text-1)"'
       :borderRadius='"5px"'

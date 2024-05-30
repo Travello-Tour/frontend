@@ -27,6 +27,7 @@
 const destinationStore = useDestinationStore()
 const destinationList = computed(() => destinationStore.destination)
 
+
 useAsyncData('destination', () => destinationStore.getDestination(apiDestination))
 </script>
 

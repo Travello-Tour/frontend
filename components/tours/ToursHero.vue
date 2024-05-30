@@ -31,12 +31,14 @@ const variablesList = computed(() => variablesStore.variables)
 const count = ref(0)
 const pagination = computed(() => variablesStore.pagination)
 
-watch(count, () => {
-  switchPage(count.value + 1)
+watch(count, async () => {
+  await switchPage(count.value + 1)
 })
+
 const switchPage = async (page:number) => {
   await variablesStore.getVariables(apiVariables, page, 4)
 }
+
 const getBoolean = (value: boolean, type: string) => {
   if (type === 'is_active') {
     if (value) {

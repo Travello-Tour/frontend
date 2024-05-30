@@ -19,7 +19,6 @@ interface Props {
   to: string
   borderRadius?: string
 }
-
 withDefaults(defineProps<Props>(), {
   text: 'Button',
   border: 'none',

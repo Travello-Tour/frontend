@@ -8,3 +8,9 @@ interface Pagination {
   total_items: number
   total_pages: number
 }
+
+interface User {
+  id: number
+  username: string
+  email: string
+}

@@ -20,6 +20,7 @@ const { locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 const availableLocales = computed<AvailableLocales>(() => (locales.value))
 
+
 </script>
 
 <style scoped lang='scss'>
