@@ -3,37 +3,42 @@
   <div class="auth">
     <div class="auth__left">
       <img
-        src="/img/auth/register-bg.png"
+        src="/img/auth/login-bg.png"
         alt="Image"
         class='auth__img'
       >
     </div>
     <div class='auth__right'>
-      <h1 class='auth__title'>Регистрация</h1>
+      <h1 class='auth__title'>Вход</h1>
       <AuthForm
         :fieldsets="[fieldset]"
-        buttonName="Регистрация"
+        buttonName="Войти"
         :formErrors="formErrors"
         :validationSchema="validationSchema"
         @submit-form="submit"
       />
       <div class="auth__link-wrapper">
         <span class="auth__small">  
-          Уже есть аккаунт?
+          Нет учетной записи?
         </span>
         <NuxtLink
-          to='/auth'
+          to='/auth/registration'
           class='auth__link'
-        >Вход</NuxtLink>
+        >Регистрация</NuxtLink>
       </div>
+      
     </div>
+   
   </div>
 </template>
 
 <script lang="ts" setup>
-const validationSchema = useValidation(['username', 'password', "email"])
+const validationSchema = useValidation(['password', "email"])
 const userStore = useUserStore()
 
+definePageMeta({
+	layout: 'auth',
+})
 const formErrors = ref<string[] | null>(null)
 const formScheme = reactive({
   fields: [
@@ -42,12 +47,6 @@ const formScheme = reactive({
       as: 'input',
       type: 'email',
       placeholder: 'Введите email',
-    },
-    {
-      name: 'username',
-      as: 'input',
-      type: 'text',
-      placeholder: 'Ваше имя',
     },
     {
       name: 'password',
@@ -62,12 +61,8 @@ const formScheme = reactive({
 const fieldset = ref({
   scheme: formScheme,
 })
-definePageMeta({
-	layout: 'auth',
-})
-
-const submit = async (body: User) => {
-  await userStore.registration(body)
+const submit = async (body: any) => {
+  await userStore.getAuth(body)
   if(!userStore.errors) {
     formErrors.value = null
   } 
@@ -77,24 +72,15 @@ const submit = async (body: User) => {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang='scss'>
 .auth {
-  display: flex;
+	display: flex;
   height: 100%;
-  
+
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-  &__right {
-    padding-left: 140px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 30px;
   }
 
   &__small {
@@ -111,25 +97,20 @@ const submit = async (body: User) => {
     gap: 2px;
   }
 
-  &__title {
-    position: relative;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 45px;
-    letter-spacing: 0;
-    text-align: center;
-    color: var(--c-white);
+  &__right {
+    padding-left: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 30px;
+  }
 
-    &::after {
-      position: absolute;
-      left: 0;
-      bottom: -12px;
-      content: 'Давайте начнем';
-      color: rgb(182, 180, 186);
-      font-size: 12.58px;
-      font-weight: 500;
-      line-height: 15px;
-    }
+  &__title {
+    color: rgb(255, 255, 255);
+    font-size: 20.84px;
+    font-weight: 600;
+    line-height: 25.2px;
   }
 
   &__link {

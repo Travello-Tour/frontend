@@ -15,6 +15,7 @@ interface Props {
   color?: string
   padding?: string
   fontSize?: string
+  fontFamily?: string
   fontWeight?: string
   to: string
   borderRadius?: string
@@ -22,6 +23,7 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   text: 'Button',
   border: 'none',
+  fontFamily: 'Inter',
   color: "var(--c-text-1)",
   padding: '0.5rem 1rem',
   fontSize: '1rem',
@@ -37,6 +39,7 @@ withDefaults(defineProps<Props>(), {
 .button {
   text-decoration: none;
   cursor: pointer;
+  font-family: v-bind(fontFamily);
   border: v-bind(border);
   color: v-bind(color);
   background: none;

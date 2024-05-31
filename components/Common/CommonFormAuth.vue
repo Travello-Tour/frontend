@@ -1,9 +1,9 @@
 <template>
   <VeeForm>
     <fieldset>
-      <VeeField>
+      <!-- <VeeField>
         
-      </VeeField>
+      </VeeField> -->
     </fieldset>
   </VeeForm>
 </template>

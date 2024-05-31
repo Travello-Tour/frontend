@@ -1,7 +1,7 @@
 <template>
   <div class='wrapper__auth'>
     <CommonButton
-      :to='"/auth/login"'
+      :to='"/auth"'
       :text='"Войти"'
       :fontWeight='"700"'
     />

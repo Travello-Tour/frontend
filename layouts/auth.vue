@@ -1,10 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="auth">
-    <div class='container'>
-      <CommonHeader />
-      <slot />
-    </div>
+    <slot />
   </div>
 </template>
 
@@ -14,10 +11,8 @@
 
 <style scoped lang="scss">
 .auth {
-	background-image: url('/img/auth/bg-auth-2.jpg');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
   height: 100vh;
+  background: linear-gradient(180.00deg, rgb(46, 50, 63),rgb(10, 6, 26) 100%);
+  
 }
 </style>
