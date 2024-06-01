@@ -21,11 +21,13 @@
         </li>
       </ul>
     </nav>
-    <HeaderAuth/>
+    <HeaderAuth v-if='!userStore.userAuth'/>
+    <HeaderAccount v-else/>
   </div>
 </template>
 
 <script lang="ts" setup>
+const userStore = useUserStore()
 </script>
 
 <style scoped lang='scss'>

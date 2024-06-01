@@ -1,5 +1,5 @@
 const config = {
-  trailingComma: "es5",
+  trailingComma: "es6",
   tabWidth: 2,
   semi: false,
   singleQuote: true,

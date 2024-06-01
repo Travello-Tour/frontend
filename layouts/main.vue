@@ -2,7 +2,6 @@
 <template>
   <div class="container">
     <CommonHeader />
-    <CommonHero/>
     <slot />
     <CommonFooter />
   </div>

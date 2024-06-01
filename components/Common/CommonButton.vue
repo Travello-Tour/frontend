@@ -1,15 +1,13 @@
 <template>
   <NuxtLink
     class='button'
-    :to='`${lang}to`'
+    :to='to'
   >
-    {{ $t(`header.${text}`) }}
+    {{ text }}
   </NuxtLink>
 </template>
 
 <script lang="ts" setup>
-const { locale } = useI18n()
-const lang = computed(() => locale.value === 'ru' ? '' : `/${locale.value}`)
 
 interface Props {
   text?: string
@@ -17,14 +15,15 @@ interface Props {
   color?: string
   padding?: string
   fontSize?: string
+  fontFamily?: string
   fontWeight?: string
   to: string
   borderRadius?: string
 }
-
 withDefaults(defineProps<Props>(), {
   text: 'Button',
   border: 'none',
+  fontFamily: 'Inter',
   color: "var(--c-text-1)",
   padding: '0.5rem 1rem',
   fontSize: '1rem',
@@ -40,6 +39,7 @@ withDefaults(defineProps<Props>(), {
 .button {
   text-decoration: none;
   cursor: pointer;
+  font-family: v-bind(fontFamily);
   border: v-bind(border);
   color: v-bind(color);
   background: none;

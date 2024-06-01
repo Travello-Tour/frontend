@@ -1,15 +1,16 @@
 <template>
   <div class='wrapper__auth'>
     <CommonButton
-      :to='"/login"'
-      :text='"login"'
+      :to='"/auth"'
+      :text='"Войти"'
+      :fontWeight='"700"'
     />
     <CommonButton
-      :to='"/auth"'
-      :text='"signUp"'
+      :to='"/auth/registration"'
+      :text='"Регистрация"'
       :border='"1px solid var(--c-text-1)"'
       :borderRadius='"5px"'
-      :fontWeight='"400"'
+      :fontWeight='"700"'
     />
   </div>
 </template>
